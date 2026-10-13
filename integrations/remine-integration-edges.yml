@@ -1,5 +1,5 @@
 generated: '2026-10-13'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/remine/integrations
 - https://n8n.io/integrations/remine/
@@ -9,8 +9,31 @@ checked:
 - https://composio.dev/toolkits/remine
 - https://monid.ai/tools/remine
 - https://n8n.io/integrations/remine/
+- https://services.reso.org/orgs?showStats=true&showEndorsements=true
 - https://zapier.com/apps/remine/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: RESO
+  partner: reso
+  type: contract
+  channel: network-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://services.reso.org/orgs?showStats=true&showEndorsements=true
+  contract_reference:
+    register: RESO organizations and endorsements (Real Estate Standards Organization)
+    spec_file: null
+    role: Technology Company
+    tier: Certified Legacy
+    registered_name: Remine
+    organization_uoi: T00000080
+    matched_domain: remine.com
+    matched_by: domain
+    endorsements:
+    - Data Dictionary 1.6 Platinum Certified Legacy
+    - Web API 1.0.2 Platinum Certified Legacy
+    summary_url: https://certification.reso.org/summary/T00000080
+    detected_by: sweep-real-estate.py
+    detected: '2026-10-13'
 templates: []
