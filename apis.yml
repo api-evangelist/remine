@@ -1,23 +1,89 @@
 aid: remine
+
 name: Remine
-description: 'Remine is a company surfaced via the API Evangelist harvest backlog (source: gap-automotive-real-estate)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://remine.com/wp-content/uploads/2025/12/remine-og.jpg
+
+description: Remine is a Bellingham, Washington-based real estate data and prospecting platform delivered to agents, lenders,
+  MLSs and REALTOR associations, often as an MLS member benefit. It combines property, owner, tax and mortgage data (including
+  distressed deals, rate and loan duration) with predictive likely-to-sell analytics, nationwide map search and lead contact
+  information, alongside Remine Pro and Remine Docs (document storage, sharing and e-signature). Remine publishes no public
+  API, developer documentation or machine-readable contract; product help is in its Zendesk support center.
+
 url: https://raw.githubusercontent.com/api-evangelist/remine/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:gap-automotive-real-estate
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+
+x-tier-reason: enrichment pass 2026-10-13 (local-v5; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-13'
+
 modified: '2026-10-13'
+
 tags:
 - Company
-apis: []
+- Real Estate
+- Property Data
+- Mortgage Data
+- Lead Generation
+- Predictive Analytics
+- MLS
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/remine-hosts.yml
+- type: Vendors
+  url: vendors/remine-vendors.yml
+- type: Documentation
+  url: https://help.remine.com/
+- type: DomainSecurity
+  url: security/remine-domain-security.yml
 - type: Website
   url: https://remine.com/
+- type: Support
+  url: https://support.remine.com/hc/en-us
+- type: SignUp
+  url: https://mortgage.remine.com/signup
+- type: Partner
+  url: https://remine.com/mlss-associations
+- type: TermsOfService
+  url: https://remine.com/tos-privacy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/remine
+
+apis: []
+
+x-enrichment:
+  status: enriched
+  pass: local-v5
+  date: '2026-10-13'
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-13'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://blog.remine.com/mcp
+    status: 403
+  - url: https://help.remine.com/mcp
+    status: 403
+  - url: https://info.remine.com/mcp
+    status: 403
+  - url: https://remine.com/
+    status: 200
