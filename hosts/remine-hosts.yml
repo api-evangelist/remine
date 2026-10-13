@@ -9,6 +9,7 @@ summary:
   platform: 1
   roles:
   - api
+  - docs
   - identity
   - marketing
   - other
@@ -36,16 +37,18 @@ hosts:
   relation: own
 - host: help.remine.com
   found_by:
+  - pointer
   - probed
   - site-links
   - docs-index
   - contract-discovery
   - well-known
-  types: []
+  types:
+  - Documentation
   serves:
   - docs
   registrable_domain: remine.com
-  role: support
+  role: docs
   relation: own
 - host: info.remine.com
   found_by:
@@ -64,9 +67,12 @@ hosts:
   - probed
   - site-links
   - well-known
+  - vendor-detect
   types:
   - SignUp
-  serves: []
+  serves:
+  - cdn
+  vendor: cloudfront
   registrable_domain: remine.com
   role: identity
   relation: own
@@ -76,11 +82,15 @@ hosts:
   - probed
   - contract-discovery
   - well-known
+  - vendor-detect
   types:
   - Website
   - Partner
   - TermsOfService
-  serves: []
+  serves:
+  - cdn
+  - hosting
+  vendor: cloudflare
   registrable_domain: remine.com
   role: website
   relation: own
@@ -90,9 +100,12 @@ hosts:
   - probed
   - site-links
   - well-known
+  - vendor-detect
   types:
   - Support
-  serves: []
+  serves:
+  - support
+  vendor: zendesk
   registrable_domain: remine.com
   role: support
   relation: own
